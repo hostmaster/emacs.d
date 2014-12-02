@@ -1,0 +1,8 @@
+tmp/
+elpa/
+eshell/
+custom.el
+*~
+ac-dict/
+ac-comphist.dat
+.python-environments/
