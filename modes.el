@@ -1,3 +1,7 @@
+;;; modes --- settings for various modes
+;;; Commentary:
+;;;
+;;; Code:
 
 ;; package: rainbow-delimiters
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
@@ -22,10 +26,14 @@
 (add-hook 'after-init-hook 'global-color-identifiers-mode)
 
 ;; packages: aggressive-indent
-; (global-aggressive-indent-mode)
-(add-hook 'emacs-lisp-mode-hook #'aggressive-indent-mode)
-(add-hook 'python-mode-hook #'aggressive-indent-mode)
+;(global-aggressive-indent-mode)
+;(add-hook 'emacs-lisp-mode-hook #'aggressive-indent-mode)
+;(add-hook 'python-mode-hook #'aggressive-indent-mode)
 
 ;; flymake
-(add-hook 'find-file-hook 'flymake-find-file-hook)
+;;(add-hook 'find-file-hook 'flymake-find-file-hook)
 
+;; flycheck
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
+;;; modes.el ends here

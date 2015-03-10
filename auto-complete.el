@@ -1,4 +1,3 @@
-
 (unless (file-exists-p "~/.emacs.d/ac-dict")
         (make-directory "~/.emacs.d/ac-dict"))
 (require 'auto-complete-config)
@@ -10,7 +9,7 @@
 
 ;; Known bug. Auto completion will not be started in a buffer
 ;; flyspell-mode enabled
-(ac-flyspell-workaround)
+;;(ac-flyspell-workaround)
 
 ;(add-hook 'python-mode-hook 'auto-complete-mode)
 (add-hook 'python-mode-hook 'jedi:ac-setup)

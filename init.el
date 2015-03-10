@@ -1,6 +1,6 @@
-;; -*- mode: Emacs-Lisp; -*-
-;;
-;;
+;;; init.el --- emacs config file
+;;; Commentary:
+;;; Code:
 
 ;; modulized Emacs configuration
 ;; http://stackoverflow.com/a/2079146/1488781
@@ -39,7 +39,9 @@
 (load-user-file "save-place.el")
 
 ;; Desktop save mode
-(load-user-file "desktop-save.el")
+;;(load-user-file "desktop-save.el")
+
+(load-user-file "save-hist-mode.el")
 
 ;; TRAMP settings
 (load-user-file "tramp.el")
@@ -53,11 +55,11 @@
 ;; columns indicator
 (load-user-file "columns.el")
 
-;; smart mode line
-(load-user-file "smart-mode-line.el")
-
 ;; Color Scheme color-theme-solarized
 (load-theme 'solarized-light t)
+
+;; smart mode line
+(load-user-file "smart-mode-line.el")
 
 ;; Deft mode for notes
 (load-user-file "deft.el")
@@ -74,6 +76,17 @@
 ;; various modes
 (load-user-file "modes.el")
 
+;; (require 'ace-isearch)
+(global-ace-isearch-mode +1)
+(custom-set-variables
+ '(ace-isearch-input-length 7)
+ '(ace-isearch-input-idle-delay 0.4)
+ '(ace-isearch-submode 'ace-jump-char-mode)
+ '(ace-isearch-use-ace-jump 'printing-char))
+
+(ace-isearch-set-ace-jump-after-isearch-exit t)
+
 ;; keyboard shortcuts
 (load-user-file "keys.el")
 
+;;; init.el ends here

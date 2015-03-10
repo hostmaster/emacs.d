@@ -10,3 +10,6 @@
 ;(add-to-list 'package-archives
 ;             '("org" . "http://orgmode.org/elpa/") t) ; Org-mode's repository
 (package-initialize)
+
+;; Paradox
+(setq paradox-execute-asynchronously t)

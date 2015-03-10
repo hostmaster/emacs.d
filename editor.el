@@ -21,6 +21,8 @@
 ;; use ‘C-v’, ‘C-c’, and ‘C-x’ to paste, copy, and cut the region.
 (cua-mode 1)
 
+;;  all files opened in the same frame, instead of new frames
+;;(setq ns-pop-up-frames nil)
 
 (delete-selection-mode t)
 ;; Handle .gz files
@@ -43,10 +45,16 @@
 
 ;; a list of recently opened files
 ;; http://www.emacswiki.org/RecentFiles
+(setq recentf-save-file (expand-file-name "recentf" "~/.emacs.d/tmp")
+      recentf-max-saved-items 100
+      recentf-max-menu-items 60)
 (recentf-mode 1)
-(setq recentf-max-saved-items 500)
-(setq recentf-max-menu-items 60)
-(setq recentf-save-file (expand-file-name "recentf" "~/.emacs.d/tmp"))
+(add-to-list 'recentf-exclude "COMMIT_EDITMSG\\'")
+(run-with-timer 1800 1800 'recentf-save-list)
+
+;(setq recentf-max-saved-items 500)
+;(setq recentf-max-menu-items 60)
+;(setq recentf-save-file (expand-file-name "recentf" "~/.emacs.d/tmp"))
 
 ;; the maximum length for all history lists that don't specify their own maximum lengths.
 (setq history-length 250)
@@ -66,3 +74,7 @@
 ;; uniquify buffer names
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
+
+;;  make sure text files end in a newline
+(setq require-final-newline 'query)
+;;  (setq require-final-newline t)
